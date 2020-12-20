@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TheEnd.Models.Course>
+@{
+    ViewBag.Title = "Все курсы";
+}
+<a asp-action="Create">Добавить курс</a>
+<div class="row mt-5 mb-2">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@item.Img" alt="@item.Name" />
+                <h2>@item.Name</h2>
+                <p>@item.ShortDesc</p>
+                <p>Цена: @item.Price.ToString("c")</p>
+                <p>
+                    <a asp-action="Details" asp-controller="Home" asp-route-id="@item.id">Подробнее</a>|
+                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.id">Удалить</a>
+                </p>
+
+            </div>
+        }
+</div>

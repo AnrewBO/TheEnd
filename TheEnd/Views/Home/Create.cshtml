@@ -1,0 +1,29 @@
+﻿@model TheEnd.Models.Course
+@{
+    ViewBag.Title = "Добавление курса";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Название</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Цена</label>
+        <input type="number" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDesc" class="control-label">Краткое описание</label>
+        <input type="textr" asp-for="ShortDesc" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LongDesc" class="control-label">Полное описание</label>
+        <input type="text" asp-for="LongDesc" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Img" class="control-label">Ссылка на картинку</label>
+        <input type="text" asp-for="Img" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>
