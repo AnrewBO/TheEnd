@@ -9,6 +9,7 @@
         <h2>@Model.Name</h2>
         <p>@Model.ShortDesc</p>
         <p>Цена: @Model.Price.ToString("c")</p>
+        <h3>Описание курса: </h3>
         <p>@Model.LongDesc</p>
         <p><a asp-action="Details" asp-controller="Home" asp-route-id="@Model.id">Подробнее</a> |</p>
     </div>

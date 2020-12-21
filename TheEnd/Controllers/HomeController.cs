@@ -42,6 +42,7 @@ namespace TheEnd.Controllers
         {
             return View();
         }
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id != null)
@@ -52,9 +53,9 @@ namespace TheEnd.Controllers
             }
             return NotFound();
         }
-        [Authorize(Roles = "admin, employee")]
         [HttpGet]
         [ActionName("Delete")]
+        [Authorize(Roles = "admin, employee")]
         public async Task<IActionResult> ConfirmDelete(int? id)
         {
             if (id != null)
@@ -65,8 +66,9 @@ namespace TheEnd.Controllers
             }
             return NotFound();
         }
-        [Authorize(Roles = "admin, employee")]
+        
         [HttpPost]
+        [Authorize(Roles = "admin, employee")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id != null)
